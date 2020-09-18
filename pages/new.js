@@ -48,7 +48,7 @@ const New = () => {
 
   const createNote = async () => {
     try {
-      const res = await fetch(`${server}/api/notes`, {
+      const res = await fetch(`/api/notes`, {
         method: 'POST',
         headers: {
           Accept: 'application/json',
@@ -56,7 +56,7 @@ const New = () => {
         },
         body: JSON.stringify(form),
       })
-      router.push(`${server}`)
+      router.push('/')
     } catch (error) {
       console.log(error)
     }

@@ -31,7 +31,7 @@ const Index = ({ note }) => {
   const deleteNote = async () => {
     const noteId = router.query.id
     try {
-      const res = await fetch(`${server}/api/notes/${noteId}`, {
+      const res = await fetch(`/api/notes/${noteId}`, {
         method: 'DELETE',
       })
       router.push('/')
@@ -63,7 +63,7 @@ const Index = ({ note }) => {
 }
 
 Index.getInitialProps = async ({ query: { id } }) => {
-  const res = await fetch(`${server}/api/notes/${id}`)
+  const res = await fetch(`/api/notes/${id}`)
   const { data } = await res.json()
   return { note: data }
 }

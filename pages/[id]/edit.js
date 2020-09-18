@@ -52,7 +52,7 @@ const Edit = ({ note }) => {
   const editNote = async () => {
     const noteId = router.query.id
     try {
-      const res = await fetch(`${server}/api/notes/${noteId}`, {
+      const res = await fetch(`/api/notes/${noteId}`, {
         method: 'PUT',
         headers: {
           Accept: 'application/json',
@@ -109,7 +109,7 @@ const Edit = ({ note }) => {
 }
 
 Edit.getInitialProps = async ({ query: { id } }) => {
-  const res = await fetch(`${server}/api/notes/${id}`)
+  const res = await fetch(`/api/notes/${id}`)
   const { data } = await res.json()
   return { note: data }
 }

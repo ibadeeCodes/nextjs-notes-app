@@ -38,7 +38,7 @@ const Index = ({ notes }) => {
 }
 
 Index.getInitialProps = async () => {
-  const data = await fetch(`${server}/api/notes`)
+  const data = await fetch(`/api/notes`)
   const result = await data.json()
   return {
     notes: result,
