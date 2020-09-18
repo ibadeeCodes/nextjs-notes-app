@@ -3,6 +3,11 @@ import Notes from '../../../models/notes'
 
 connectDB()
 
+// Initializing the cors middleware
+const cors = Cors({
+  methods: ['GET', 'HEAD'],
+})
+
 export default async (req, res) => {
   const { method } = req
 
