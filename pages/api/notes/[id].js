@@ -1,9 +1,11 @@
 import connectDB from '../../../utils/dbConfig'
 import Notes from '../../../models/notes'
+import cors from './cors'
 
 connectDB()
 
 export default async (req, res) => {
+  await cors(req, res)
   const {
     query: { id },
     method,

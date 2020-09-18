@@ -1,14 +1,11 @@
 import connectDB from '../../../utils/dbConfig'
 import Notes from '../../../models/notes'
+import cors from './cors'
 
 connectDB()
 
-// Initializing the cors middleware
-const cors = Cors({
-  methods: ['GET', 'HEAD'],
-})
-
 export default async (req, res) => {
+  await cors(req, res)
   const { method } = req
 
   switch (method) {
