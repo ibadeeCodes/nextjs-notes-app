@@ -56,7 +56,7 @@ const New = () => {
         },
         body: JSON.stringify(form),
       })
-      router.push('/')
+      router.push(`${server}`)
     } catch (error) {
       console.log(error)
     }
